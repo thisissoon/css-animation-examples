@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Ed's CSS Animation Tutorial</title>
+    <style>
+      .box {
+        background-color: #000000;
+        color: #ffffff;
+        display: table;
+        height: 300px;
+        width: 300px;
+        text-align: center;
+      }
+
+      .box.grow {
+        height: 700px;
+        width: 700px;
+      }
+
+      .box.rotate {
+        animation-name: rotate;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+
+      .box .text {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        50% {
+          transform: rotateZ(90deg);
+        }
+        100% {
+          transform: rotateZ(0deg);
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <span class="text">Hi, i am a box</span>
+    </div>
+
+    Toggle classes:
+    <button onclick="toggleClass('grow')">grow</button>
+    <button onclick="toggleClass('rotate')">rotate</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"> </script>
+
+    <script>
+      var toggleClass = function toggleClass(name){
+        $('.box').toggleClass(name);
+      };
+    </script>
+
+  </body>
+</html>

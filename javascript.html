@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>CSS Animation Tutorial</title>
+    <style>
+      .box {
+        background-color: #e3e3e3;
+        height: 300px;
+        width: 300px;
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+      }
+      .box.grow {
+        height: 400px;
+        width: 400px;
+      }
+      .box.rotate {
+        transform: rotateZ(180deg);
+      }
+    </style>
+  </head>
+  <body>
+     <div class="box">
+       Hi i'm a box
+     </div>
+
+     Toggle classes:
+     <button onclick="toggleClass('grow')">grow</button>
+     <button onclick="toggleClass('rotate')">rotate</button>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"> </script>
+
+     <script>
+       var toggleClass = function toggleClass(name){
+         $('.box').toggleClass(name);
+       };
+     </script>
+  </body>
+</html>
